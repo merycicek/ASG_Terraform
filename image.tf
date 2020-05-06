@@ -1,9 +1,5 @@
-data "aws_ami" "image" { 
+data "aws_ami" "image" {
+  most_recent = true
 
-most_recent = true 
-
-owners = ["099720109477"] # Canonical 
-
-} 
-
- 
+  owners = ["099720109477"] # Canonical 
+}
