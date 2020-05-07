@@ -9,3 +9,9 @@ module "wordpress" {
   region = "us-east-1"
   
 }
+
+module "wordpress-london" {
+  source = "./module"
+  region = "eu-west-2"
+  
+}
