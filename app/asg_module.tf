@@ -4,3 +4,8 @@ module "app1" {
   
 }
 
+module "wordpress" {
+  source = "./module"
+  region = "us-east-1"
+  
+}
