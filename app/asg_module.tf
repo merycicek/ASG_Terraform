@@ -167,3 +167,51 @@ module "Canada" {
 
   min_size = 1
 }
+
+module "Frankfurt" {
+  source = "./module"
+  region = "eu-central-1"
+  image_owner = "137112412989"
+
+  desired_capacity = 1
+
+  max_size = 1
+
+  min_size = 1
+}
+
+module "Milan" {
+  source = "./module"
+  region = "eu-south-1"
+  image_owner = "137112412989"
+
+  desired_capacity = 1
+
+  max_size = 1
+
+  min_size = 1
+}
+
+module "Paris" {
+  source = "./module"
+  region = "eu-west-3"
+  image_owner = "137112412989"
+
+  desired_capacity = 1
+
+  max_size = 1
+
+  min_size = 1
+}
+
+module "Stockholm" {
+  source = "./module"
+  region = "eu-north-1"
+  image_owner = "137112412989"
+
+  desired_capacity = 1
+
+  max_size = 1
+
+  min_size = 1
+}
