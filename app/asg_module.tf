@@ -16,4 +16,11 @@ region = "us-west-2"
 
 } 
 
- 
+ module "Ohio" {
+  source = "./module"
+  region = "us-east-2"
+}
+module "ireland" {
+  source = "./module"
+  region = "eu-west-1"
+}
