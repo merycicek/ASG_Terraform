@@ -11,8 +11,8 @@ module "app1" {
 }
 
 module "wordpress-london" {
-  source = "./module"
-  region = "eu-west-2"
+  source      = "./module"
+  region      = "eu-west-2"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -25,7 +25,7 @@ module "wordpress-london" {
 module "oregon" {
   source = "./module"
 
-  region = "us-west-2"
+  region      = "us-west-2"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -38,7 +38,7 @@ module "oregon" {
 module "California" {
   source = "./module"
 
-  region = "us-west-1"
+  region      = "us-west-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -47,9 +47,10 @@ module "California" {
 
   min_size = 1
 }
+
 module "Ohio" {
-  source = "./module"
-  region = "us-east-2"
+  source      = "./module"
+  region      = "us-east-2"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -60,8 +61,8 @@ module "Ohio" {
 }
 
 module "ireland" {
-  source = "./module"
-  region = "eu-west-1"
+  source      = "./module"
+  region      = "eu-west-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -71,34 +72,33 @@ module "ireland" {
   min_size = 1
 }
 
-module "Africa" {
-  source = "./module"
-  region = "af-south-1"
-  image_owner = "137112412989"
+# module "Africa" {
+#   source      = "./module"
+#   region      = "af-south-1"
+#   image_owner = "137112412989"
 
-  desired_capacity = 1
+#   desired_capacity = 1
 
-  max_size = 1
+#   max_size = 1
 
-  min_size = 1
-}
+#   min_size = 1
+# }
 
+# module "HongKong" {
+#   source      = "./module"
+#   region      = "ap-east-1"
+#   image_owner = "137112412989"
 
-module "HongKong" {
-  source = "./module"
-  region = "ap-east-1"
-  image_owner = "137112412989"
+#   desired_capacity = 1
 
-  desired_capacity = 1
+#   max_size = 1
 
-  max_size = 1
-
-  min_size = 1
-}
+#   min_size = 1
+# }
 
 module "mumbai" {
-  source = "./module"
-  region = "ap-south-1"
+  source      = "./module"
+  region      = "ap-south-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -109,8 +109,8 @@ module "mumbai" {
 }
 
 module "Seoul" {
-  source = "./module"
-  region = "ap-northeast-2"
+  source      = "./module"
+  region      = "ap-northeast-2"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -121,8 +121,8 @@ module "Seoul" {
 }
 
 module "Singapur" {
-  source = "./module"
-  region = "ap-southeast-1"
+  source      = "./module"
+  region      = "ap-southeast-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -133,8 +133,8 @@ module "Singapur" {
 }
 
 module "Sydney" {
-  source = "./module"
-  region = "ap-southeast-2"
+  source      = "./module"
+  region      = "ap-southeast-2"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -145,8 +145,8 @@ module "Sydney" {
 }
 
 module "Tokyo" {
-  source = "./module"
-  region = "ap-northeast-1"
+  source      = "./module"
+  region      = "ap-northeast-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -157,8 +157,8 @@ module "Tokyo" {
 }
 
 module "Canada" {
-  source = "./module"
-  region = "ca-central-1"
+  source      = "./module"
+  region      = "ca-central-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -169,8 +169,8 @@ module "Canada" {
 }
 
 module "Frankfurt" {
-  source = "./module"
-  region = "eu-central-1"
+  source      = "./module"
+  region      = "eu-central-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -180,21 +180,21 @@ module "Frankfurt" {
   min_size = 1
 }
 
-module "Milan" {
-  source = "./module"
-  region = "eu-south-1"
-  image_owner = "137112412989"
+# module "Milan" {
+#   source      = "./module"
+#   region      = "eu-south-1"
+#   image_owner = "137112412989"
 
-  desired_capacity = 1
+#   desired_capacity = 1
 
-  max_size = 1
+#   max_size = 1
 
-  min_size = 1
-}
+#   min_size = 1
+# }
 
 module "Paris" {
-  source = "./module"
-  region = "eu-west-3"
+  source      = "./module"
+  region      = "eu-west-3"
   image_owner = "137112412989"
 
   desired_capacity = 1
@@ -205,8 +205,8 @@ module "Paris" {
 }
 
 module "Stockholm" {
-  source = "./module"
-  region = "eu-north-1"
+  source      = "./module"
+  region      = "eu-north-1"
   image_owner = "137112412989"
 
   desired_capacity = 1
