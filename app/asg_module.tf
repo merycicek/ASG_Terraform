@@ -35,18 +35,18 @@ module "oregon" {
   min_size = 1
 }
 
-module "California" {
-  source = "./module"
+# module "California" {
+#   source = "./module"
 
-  region      = "us-west-1"
-  image_owner = "137112412989"
+#   region      = "us-west-1"
+#   image_owner = "137112412989"
 
-  desired_capacity = 1
+#   desired_capacity = 1
 
-  max_size = 1
+#   max_size = 1
 
-  min_size = 1
-}
+#   min_size = 1
+# }
 
 module "Ohio" {
   source      = "./module"
@@ -144,17 +144,17 @@ module "Sydney" {
   min_size = 1
 }
 
-module "Tokyo" {
-  source      = "./module"
-  region      = "ap-northeast-1"
-  image_owner = "137112412989"
+# module "Tokyo" {
+#   source      = "./module"
+#   region      = "ap-northeast-1"
+#   image_owner = "137112412989"
 
-  desired_capacity = 1
+#   desired_capacity = 1
 
-  max_size = 1
+#   max_size = 1
 
-  min_size = 1
-}
+#   min_size = 1
+# }
 
 module "Canada" {
   source      = "./module"
@@ -192,26 +192,26 @@ module "Frankfurt" {
 #   min_size = 1
 # }
 
-module "Paris" {
-  source      = "./module"
-  region      = "eu-west-3"
-  image_owner = "137112412989"
+# module "Paris" {
+#   source      = "./module"
+#   region      = "eu-west-3"
+#   image_owner = "137112412989"
 
-  desired_capacity = 1
+#   desired_capacity = 1
 
-  max_size = 1
+#   max_size = 1
 
-  min_size = 1
-}
+#   min_size = 1
+# }
 
-module "Stockholm" {
-  source      = "./module"
-  region      = "eu-north-1"
-  image_owner = "137112412989"
+# module "Stockholm" {
+#   source      = "./module"
+#   region      = "eu-north-1"
+#   image_owner = "137112412989"
 
-  desired_capacity = 1
+#   desired_capacity = 1
 
-  max_size = 1
+#   max_size = 1
 
-  min_size = 1
-}
+#   min_size = 1
+# }
