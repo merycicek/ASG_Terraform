@@ -1,39 +1,31 @@
-resource "aws_security_group" "asg-sec-group" { 
+resource "aws_security_group" "asg-sec-group" {
+  name = "asg-sec-group"
 
-name = "asg-sec-group" 
+  description = "Allow TLS inbound traffic"
 
-description = "Allow TLS inbound traffic" 
+  ingress {
+    description = "TLS from VPC"
 
-ingress { 
+    from_port = 22
 
-description = "TLS from VPC" 
+    to_port = 22
 
-from_port = 22 
+    protocol = "tcp"
 
-to_port = 22 
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-protocol = "tcp" 
+  egress {
+    from_port = 0
 
-cidr_blocks = ["0.0.0.0/0"] 
+    to_port = 0
 
-} 
+    protocol = "-1"
 
-egress { 
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-from_port = 0 
-
-to_port = 0 
-
-protocol = "-1" 
-
-cidr_blocks = ["0.0.0.0/0"] 
-
-} 
-
-tags = { 
-
-Name = "allow_tls" 
-
-} 
-
-} 
+  tags = {
+    Name = "allow_tls"
+  }
+}
