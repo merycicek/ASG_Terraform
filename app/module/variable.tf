@@ -1,7 +1,7 @@
-variable "image_owner" {} 
+variable "image_owner" {}
 variable "region" {}
-variable "desired_capacity" {} 
+variable "desired_capacity" {}
 
-variable "max_size" {} 
+variable "max_size" {}
 
-variable "min_size" {} 
+variable "min_size" {}

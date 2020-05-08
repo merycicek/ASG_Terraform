@@ -1,71 +1,49 @@
-resource "aws_elb" "bar" { 
+resource "aws_elb" "bar" {
+  name = "foobar-terraform-elbs"
 
-name = "foobar-terraform-elbs" 
+  availability_zones = [
+    "${var.region}a",
+    "${var.region}b",
+    "${var.region}c",
+  ]
 
-availability_zones = [ 
+  listener {
+    instance_port = 80
 
-"${var.region}a", 
+    instance_protocol = "http"
 
-"${var.region}b", 
+    lb_port = 80
 
-"${var.region}c", 
+    lb_protocol = "http"
+  }
 
-] 
+  health_check {
+    healthy_threshold = 2
 
- 
+    unhealthy_threshold = 2
 
-listener { 
+    timeout = 3
 
-instance_port = 80 
+    target = "HTTP:80/"
 
-instance_protocol = "http" 
+    interval = 30
+  }
 
-lb_port = 80 
+  cross_zone_load_balancing = true
 
-lb_protocol = "http" 
+  idle_timeout = 400
 
-} 
+  connection_draining = true
 
- 
+  connection_draining_timeout = 400
 
-health_check { 
+  tags = {
+    Name = "foobar-terraform-elbs"
+  }
+}
 
-healthy_threshold = 2 
+resource "aws_autoscaling_attachment" "asg_attachment_bar" {
+  autoscaling_group_name = "${aws_autoscaling_group.example.id}"
 
-unhealthy_threshold = 2 
-
-timeout = 3 
-
-target = "HTTP:80/" 
-
-interval = 30 
-
-} 
-
-cross_zone_load_balancing = true 
-
-idle_timeout = 400 
-
-connection_draining = true 
-
-connection_draining_timeout = 400 
-
-tags = { 
-
-Name = "foobar-terraform-elbs" 
-
-} 
-
-} 
-
- 
-
- 
-
-resource "aws_autoscaling_attachment" "asg_attachment_bar" { 
-
-autoscaling_group_name = "${aws_autoscaling_group.example.id}" 
-
-elb = "${aws_elb.bar.id}" 
-
-} 
+  elb = "${aws_elb.bar.id}"
+}

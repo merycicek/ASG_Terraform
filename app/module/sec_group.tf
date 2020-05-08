@@ -15,7 +15,7 @@ resource "aws_security_group" "asg-sec-group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
- ingress {
+  ingress {
     description = "TLS from VPC"
 
     from_port = 80
@@ -27,7 +27,7 @@ resource "aws_security_group" "asg-sec-group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
- ingress {
+  ingress {
     description = "TLS from VPC"
 
     from_port = 443

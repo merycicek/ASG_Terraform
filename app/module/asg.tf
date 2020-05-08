@@ -1,21 +1,15 @@
-
-data "template_file" "init" { 
-
-template = "${file("${path.module}/wordpress.sh")}" 
-
-} 
-
- 
+data "template_file" "init" {
+  template = "${file("${path.module}/wordpress.sh")}"
+}
 
 resource "aws_launch_template" "example" {
   name_prefix = "example"
 
   image_id = "${data.aws_ami.image.id}"
 
-  instance_type = "c5.large"
-  user_data = "${base64encode(data.template_file.init.rendered)}" 
-  vpc_security_group_ids = ["${aws_security_group.asg-sec-group.id}"] 
-  
+  instance_type          = "c5.large"
+  user_data              = "${base64encode(data.template_file.init.rendered)}"
+  vpc_security_group_ids = ["${aws_security_group.asg-sec-group.id}"]
 }
 
 resource "aws_autoscaling_group" "example" {
@@ -25,11 +19,11 @@ resource "aws_autoscaling_group" "example" {
     "${var.region}c",
   ]
 
-  desired_capacity = "${var.desired_capacity}" 
+  desired_capacity = "${var.desired_capacity}"
 
-max_size = "${var.max_size}" 
+  max_size = "${var.max_size}"
 
-min_size = "${var.min_size}" 
+  min_size = "${var.min_size}"
 
   mixed_instances_policy {
     launch_template {
