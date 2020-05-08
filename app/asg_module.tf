@@ -84,7 +84,7 @@ module "Africa" {
 }
 
 
-module "Hong Kong" {
+module "HongKong" {
   source = "./module"
   region = "ap-east-1"
   image_owner = "137112412989"
